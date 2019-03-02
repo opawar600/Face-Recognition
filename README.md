@@ -9,7 +9,7 @@ We will implement a classical face recognition system using OpenCV library. The 
   
 Before we get started, you need to install some libraries. 
 
-1. First of all you will need **Python 3.5** or more in your computer. You can easily check if it is installed by typing "python" in your terminal/command prompt. If not, go to this [link](https://www.python.org/downloads/) and install python.
+1. First of all you will need **Python 3.5** or more in your computer. You can easily check if it is installed by typing "python" in your terminal/command prompt. If not, [install python](https://www.python.org/downloads/) .
 
 2. Now you need **OpenCV**. For this, you can run the command *pip install opencv-python* and *pip install opencv-contrib-python*. Here is a detailed information of how you can [install OpenCV](https://pypi.org/project/opencv-python/).
 
