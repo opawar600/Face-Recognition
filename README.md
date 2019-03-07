@@ -28,4 +28,12 @@ https://docs.opencv.org/3.4.3/d7/d8b/tutorial_py_face_detection.html) about Haar
 
 The program *face_detection.py* is able to locate the face in the given image using the same Cascade Classifier. Just make sure to specify the path where the haarcascade_frontalface_default.xml file is stored. I have uploaded the xml file in the repo. **It is recommended that you store this haarcascade_frontalface_default.xml file in the same folder where the face_detection.py is present.** You can [download](https://github.com/opencv/opencv/tree/master/data/haarcascades) various xml files and try diffrent things other than only face detection.
 
+## Create Dataset
+
+> python create_dataset.py
+
+This script is used to store the facial images in the database which will be used to train the recognizer. Storing whole image will make it difficult to recognize the faces. Hence we will crop only the face from the captured image and store it to the folder. The rectangle that we drew over the face in the face_detection.py script, same concept will be applied to store the facial image. We have the co-ordinates of the rectangle which we can use to crop the image from the video.
+One thing to notice is that we store the images in grayscale format. This is because the algorithm we use needs black and white images. It will further be explained when we talk about LBPH recognizer.  
+
+ 
 This was all about face detection. I will keep updating the repo as soon as I finish the further modules. Till then, **Happy Coding**
