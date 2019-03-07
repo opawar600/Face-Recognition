@@ -1,6 +1,12 @@
 import cv2
 import os
 
+def folder_present(path):
+    dir = os.path.dirname(path)
+    if not os.path.exists(dir):
+        os.makedirs(dir)
+
+
 cam = cv2.VideoCapture(0)
 
 cam.set(3, 640) # set video width
@@ -14,6 +20,8 @@ print("\n [INFO] Initializing face capture. Look the camera and wait ...")
 
 # Initialize individual sampling face count
 count = 0
+
+folder_present("dataset/")
 
 while(True):
 
