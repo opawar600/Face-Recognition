@@ -32,7 +32,7 @@ The program *face_detection.py* is able to locate the face in the given image us
 
 > python create_dataset.py
 
-This script is used to store the facial images in the database which will be used to train the recognizer. Storing whole image will make it difficult to recognize the faces. Hence we will crop only the face from the captured image and store it to the folder. The rectangle that we drew over the face in the face_detection.py script, same concept will be applied to store the facial image. We have the co-ordinates of the rectangle which we can use to crop the image from the video.
+This script is used to store the facial images in the database which will be used to train the recognizer. Storing whole image will make it difficult to recognize the faces. Hence we will crop only the face from the captured image and store it to the folder. The rectangle that we drew over the face in the face_detection.py script, same concept will be applied to store the facial image. We have the co-ordinates of the rectangle which we can use to crop the image from the video. The script will create a folder named dataset where it will store all the images. If the folder is not present, it will do that for you!
 One thing to notice is that we store the images in grayscale format. This is because the algorithm we use needs black and white images. It will further be explained when we talk about LBPH recognizer.  
 
  
