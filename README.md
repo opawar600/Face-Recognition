@@ -69,5 +69,3 @@ Once you execute this script, the video frame will pop up and the known faces(tr
 
 3 [Towards Data Science : Understanding LBPH Algorithm](https://towardsdatascience.com/face-recognition-how-lbph-works-90ec258c3d6b)
 
-4 [Hackster.io](https://www.hackster.io/mjrobot/real-time-face-recognition-an-end-to-end-project-a10826)
-
