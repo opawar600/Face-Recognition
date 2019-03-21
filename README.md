@@ -17,9 +17,9 @@ That's it! You can now start writing your own programs and access OpenCV's power
 
 ## Face detection 
 
-*Don't feel like reading the information below and want to directly get started with the implemenation??? Run this command and your face will be detected*
+*Don't feel like reading the information below and want to directly get started with the implemenation??? Run the commands in italics and get started*
 
-> python face_detection.py
+> *python face_detection.py*
 
 Face detection is used nowadays in many kinds of applications like smartphone cameras, human computer interaction, social media and surveillance. It can be done using various pre-trained models which can do the heavy lifting for us to detect faces. OpenCV has various cascade classifiers which can detect faces with their different aspects like eye, nose and lips location. They are saved in a  XML file which we can access easily. There are line features, edge features and rectangle features in these models.
 
@@ -30,14 +30,14 @@ The program *face_detection.py* is able to locate the face in the given image us
 
 ## Create Dataset
 
-> python create_dataset.py
+> *python create_dataset.py*
 
 This script is used to store the facial images in the database which will be used to train the recognizer. Storing whole image will make it difficult to recognize the faces. Hence we will crop only the face from the captured image and store it to the folder. The rectangle that we drew over the face in the face_detection.py script, same concept will be applied to store the facial image. We have the co-ordinates of the rectangle which we can use to crop the image from the video. The script will create a folder named dataset where it will store all the images. If the folder is not present, it will do that for you!
 One thing to notice is that we store the images in grayscale format. This is because the algorithm we use needs black and white images. It will further be explained when we talk about LBPH recognizer.
 
 ## Train the Recognizer
 
-> python train_recognizer.py
+> *python train_recognizer.py*
 
 Once we have saved faces to the dataset, its time to train a recognizer to recognize faces that are similar to the images in datset. In this script, we access the dataset folder and provide each image to the recognizer for analysis. We will be using ***LBPHFaceRecognizer*** for recognition of the face. Each image's label(id) will be extracted by spliting the path of image and the recogniser will output the label of the new image that will be provided to it for recognition. 
 
@@ -50,5 +50,24 @@ The original LBP operator works on the 8- neighbors of a pixel. The image is div
 
 For more detailed explaination of this algorithm, you can go [here.](https://towardsdatascience.com/face-recognition-how-lbph-works-90ec258c3d6b)
 
+## Recognize faces
 
- I will keep updating the repo as soon as I finish the further modules. Till then, **Happy Coding**
+> *python video_recognition.py*
+
+We are all set now. Till now we did all the work required for recognizing your face like creating a dataset and training a model. Now its time to actually see how the program recognises the face. But for that, you need get your hands dirty on the code written in the video_recognition.py script. On the line number **18**, there is a list named as **names**. It has the names which needs to be shown while the script recognises the face. You need to edit that list and fill in the names you wish. Remember that saved some images using create_dataset.py script? Just recall the user id you entered before the images were actually captured. The is corresponds to the index of the name that is present in the list. For example, if Omkar saved his images using user id = 1, then the list should be updated by the name "Omkar" at the index 1, where at present it is written as "User 1". Just fill in the proper name in this list corresponding to the user id in the dataset folder. If you have saved n users images while executing create_dataset.py script, you must have n+1 entries in the **names** list present in video_recognition.py script. The 0th index in kept "None" as we don't have any entry for user id=0.
+Once you execute this script, the video frame will pop up and the known faces(trained images) will get recognized. On line number 54 of the video_recognition.py script, you will find a condition which compares the confidence with an arbitary number.This acts as a thresold value which specifies what is the minimum confidence required to predict the id of the face in the video. You can play around with this threshold to get accurate results.
+
+**Yeaahhh!** You have used the powers of OpenCV and Python for facial recognition. This can be further used for many applications where facial recognition can be implemented to build some interesting projects. This was the simplest algorithm that we can use for face recognition. There are many more advanced algorithms you can explore if this domain excites you. That's all I'hv got to share in this repo. Thanks for exploring the code and hope you enjoyed it!
+
+**Happy Coding**
+
+## Credits and References
+
+1 [OpenCV Documentation Page](https://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html#local-binary-patterns-histograms)
+
+2 [Face Detection Documentation](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html)
+
+3 [Towards Data Science : Understanding LBPH Algorithm](https://towardsdatascience.com/face-recognition-how-lbph-works-90ec258c3d6b)
+
+4 [Hackster.io](https://www.hackster.io/mjrobot/real-time-face-recognition-an-end-to-end-project-a10826)
+
