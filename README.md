@@ -11,7 +11,9 @@ Before we get started, you need to install some libraries.
 
 1. First of all you will need **Python 3.5** or more in your computer. You can easily check if it is installed by typing "python" in your terminal/command prompt. If not, [install python](https://www.python.org/downloads/) .
 
-2. Now you need **OpenCV**. For this, you can run the command *pip install opencv-python* and *pip install opencv-contrib-python*. Here is a detailed information of how you can [install OpenCV](https://pypi.org/project/opencv-python/).
+2. Now you need **OpenCV**. For this, you can run the command ***pip install opencv-python*** and ***pip install opencv-contrib-python***. Here is a detailed information of how you can [install OpenCV](https://pypi.org/project/opencv-python/).
+
+3. The last library that you need is Pillow. It is used to access the images path and load them into our program. To install it, run ***pip install Pillow*** this command on your terminal.
 
 That's it! You can now start writing your own programs and access OpenCV's power to do various Computer Vision projects. So let's get started with face detection.
 
@@ -40,6 +42,8 @@ One thing to notice is that we store the images in grayscale format. This is bec
 > *python train_recognizer.py*
 
 Once we have saved faces to the dataset, its time to train a recognizer to recognize faces that are similar to the images in datset. In this script, we access the dataset folder and provide each image to the recognizer for analysis. We will be using ***LBPHFaceRecognizer*** for recognition of the face. Each image's label(id) will be extracted by spliting the path of image and the recogniser will output the label of the new image that will be provided to it for recognition. 
+
+Make sure that you have created a folder named "trainer" on the same location. The trained recogniser will sotred in this folder for further use i.e to recognise new images. 
 
 Lets see how the LBPH algorithm works.
 
